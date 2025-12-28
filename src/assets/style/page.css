@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* variabel */
+:root{
+    --color-primary-men: #002772;
+    --color-primary-women: #720060;
+    --color-white: #FFFFFF;
+    --color-unavailable: #DCDCDC;
+    --color-pink:#FDE2FF;
+    --color-blue-light: #D6E6FF;
+    --color-text-dark:#1E1E1E;
+    --color-text-grey: #3F3F3F;  
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* font-family: var(--fontFamily); */
+    background-color: var(--color-white);
+}
+
+.product-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card{
+    background: var(--color-white);
+    padding: 56px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: min(80%, 1034px);
+    height: 580px;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.img-container{
+    display: flex;
+    width: 305px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img{
+    width: 100%;
+    max-height: 383px;
+    object-fit: contain;
+}
+
+.desc-container{
+    width: 584px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.desc-container h3{
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+.category-rating{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+}
+
+.category{
+    font-size: 18px;
+}
+
+.category-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center; 
+  gap: 4px;            
+}
+
+.rating {
+  font-size: 18px;
+  line-height: 1;
+  margin-right: 4px;
+}
+
+.rating-circle,
+.rating-circle-border {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0; 
+}
+
+
+
+.description{
+    padding-top: 20px;
+    border-top: 1px solid var(--color-unavailable);
+    border-bottom: 1px solid var(--color-unavailable);
+    color: var(--color-text-dark);
+    height: 251.5px;
+    flex-grow: 1;
+}
+
+.price{
+    margin: 15px 0 15px 0;
+}
+
+.button{
+    display: flex;
+    gap: 19px;
+}
+
+
+.card-product-unavailable {
+  background: center no-repeat url("/src/assets/img/sad-face.png");
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: min(80%, 1034px);
+  height: 580px;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+button{
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--color-white);
+    color: white;
+}
+
+.button button:hover{
+transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 140, 141, 0.3);
+}
+.button button:active{
+transform: translateY(1px);
+}
+
+
+.card-product-unavailable button {
+  width: 50%; 
+  margin: 0 auto; 
+  display: block; 
+  color: #333;
+  border: 2px solid transparent;
+}
+
+.card-product-unavailable button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 140, 141, 0.3);
+}
+
+.card-product-unavailable button:active {
+  transform: translateY(1px);
+}
+
+
