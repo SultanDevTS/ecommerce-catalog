@@ -1,46 +1,99 @@
 
 <template>
-  <div :style="{background: currentStyle.background}"
-  class="product-container">
-  <div v-if="currentStyle.show" class="product-card">
-    <div class="img-container">
-      <img :src="currentProduct.image" alt="Product Image" />
+  <div
+    class="product-container"
+    :style="{ background: currentStyle.background }"
+  >
+
+    <!-- skeleton loading -->
+    <div v-if="isLoading" class="product-card skeleton-card">
+      <div class="img-container">
+        <div class="skeleton skeleton-image"></div>
+      </div>
+
+      <div class="desc-container">
+        <div class="skeleton skeleton-title"></div>
+
+        <div class="category-rating">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-rating"></div>
+        </div>
+
+        <div class="description">
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line short"></div>
+        </div>
+
+        <div class="skeleton skeleton-price"></div>
+
+        <div class="button">
+          <div class="skeleton skeleton-button"></div>
+          <div class="skeleton skeleton-button"></div>
+        </div>
+      </div>
     </div>
-    <div class="desc-container">
-      <h3 :style="{color:currentStyle.color}">
-        {{ currentProduct.title }}
-      </h3>
-      <div class="category-rating">
-        <span class="category">{{ currentProduct.category }}</span>
-  <div class="rating-container">
-    <span class="rating">2.9/5</span>
-    <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
-    <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
-    <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
-    <div class="rating-circle-border" :style="{ border: currentStyle.border }"></div>
-    <div class="rating-circle-border" :style="{ border: currentStyle.border }"></div>
-  </div>
 
+    <!-- product card -->
+    <div v-else-if="currentStyle.show" class="product-card">
+      <div class="img-container">
+        <img :src="currentProduct.image" alt="Product Image" />
+      </div>
 
-      </div>
-      <div class="description">
-        <p>{{ currentProduct.description }}</p>
-      </div>
-      <h3 class="price" :style="{color:currentStyle.color}">${{ currentProduct.price }}</h3>
-      <div class="button">
-        <button :style="{background: currentStyle.color}">Buy Now</button>
-        <button @click="nextProduct" :style="{border: currentStyle.border, color:currentStyle.color}">Next Product</button>
+      <div class="desc-container">
+        <h3 :style="{ color: currentStyle.color }">
+          {{ currentProduct.title }}
+        </h3>
+
+        <div class="category-rating">
+          <span class="category">{{ currentProduct.category }}</span>
+
+          <div class="rating-container">
+            <span class="rating">2.9/5</span>
+            <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
+            <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
+            <div class="rating-circle" :style="{ background: currentStyle.color }"></div>
+            <div class="rating-circle-border" :style="{ border: currentStyle.border }"></div>
+            <div class="rating-circle-border" :style="{ border: currentStyle.border }"></div>
+          </div>
+        </div>
+
+        <div class="description">
+          <p>{{ currentProduct.description }}</p>
+        </div>
+
+        <h3 class="price" :style="{ color: currentStyle.color }">
+          ${{ currentProduct.price }}
+        </h3>
+
+        <div class="button">
+          <button :style="{ background: currentStyle.color }">
+            Buy Now
+          </button>
+          <button
+            @click="nextProduct"
+            :style="{ border: currentStyle.border, color: currentStyle.color }"
+          >
+            Next Product
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div v-else class="card-product-unavailable">
-    <p>This Product is Unavailabel to show</p>
-    <button @click="nextProduct" :style="{border: currentStyle.border}">Next Product</button>
-  </div>
+
+    <!-- unavailable  -->
+    <div v-else class="card-product-unavailable">
+      <p>This Product is Unavailable to show</p>
+      <button
+        @click="nextProduct"
+        :style="{ border: currentStyle.border }"
+      >
+        Next Product
+      </button>
+    </div>
 
   </div>
-
 </template>
+
 
 <script setup>
   import {ref, computed} from 'vue';
