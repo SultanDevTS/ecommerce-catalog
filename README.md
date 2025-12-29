@@ -1,4 +1,4 @@
-## Ecommerce-Catalog Product UI
+## Ecommerce-catalog Product UI
 
 ### Features
 - Dynamic product by category
@@ -13,5 +13,13 @@
 - Fetch API
 
 ### How to Run
+
+```sh
 npm install
-npm run dev
+```
+
+
+```sh
+npm run build
+```
+
