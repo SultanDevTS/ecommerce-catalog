@@ -4,12 +4,12 @@
 - Dynamic product by category
 - Skeleton loading
 - Responsive layout
-- Rating visualization
-- Unavailable state handling
+- interaktif button
+
 
 ### Tech Stack
 - Vue 3
-- CSS Flexbox
+- CSS
 - Fetch API
 
 ### How to Run
